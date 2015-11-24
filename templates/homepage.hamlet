@@ -1,94 +1,10 @@
-<div .container-fluid>
-  <div .row>
-    <div .col-md-8.posts>
-      <div .post-container>
-        <div .post-titlebar>
-          Node.js For Beginners. Deploy Your Blog to Heroku
-        <div .post-summary>
-          Error pages are not what typically appear on your screen when you're surfing
-          the web, but when it happens it's so annoying! To see how servers work from
-          within, we will build a simple web server by ourselves. We will use Node.js as
-          a server part technology for that task. Then we'll use Heroku cloud application
-          platform to turn this local server into a world wide server.
-        <div .post-bottom-link>
-          <a href="#">
-            Read more
-      <div .post-container>
-        <div .post-titlebar>
-          Node.js For Beginners. Deploy Your Blog to Heroku
-        <div .post-summary>
-          Error pages are not what typically appear on your screen when you're surfing
-          the web, but when it happens it's so annoying! To see how servers work from
-          within, we will build a simple web server by ourselves. We will use Node.js as
-          a server part technology for that task. Then we'll use Heroku cloud application
-          platform to turn this local server into a world wide server.
-        <div .post-bottom-link>
-          <a href="#">
-            Read more
-      <div .post-container>
-        <div .post-titlebar>
-          Node.js For Beginners. Deploy Your Blog to Heroku
-        <div .post-summary>
-          Error pages are not what typically appear on your screen when you're surfing
-          the web, but when it happens it's so annoying! To see how servers work from
-          within, we will build a simple web server by ourselves. We will use Node.js as
-          a server part technology for that task. Then we'll use Heroku cloud application
-          platform to turn this local server into a world wide server.
-        <div .post-bottom-link>
-          <a href="#">
-            Read more
-      <div .post-container>
-        <div .post-titlebar>
-          Node.js For Beginners. Deploy Your Blog to Heroku
-        <div .post-summary>
-          Error pages are not what typically appear on your screen when you're surfing
-          the web, but when it happens it's so annoying! To see how servers work from
-          within, we will build a simple web server by ourselves. We will use Node.js as
-          a server part technology for that task. Then we'll use Heroku cloud application
-          platform to turn this local server into a world wide server.
-        <div .post-bottom-link>
-          <a href="#">
-            Read more
-      <div .post-container>
-        <div .post-titlebar>
-          Node.js For Beginners. Deploy Your Blog to Heroku
-        <div .post-summary>
-          Error pages are not what typically appear on your screen when you're surfing
-          the web, but when it happens it's so annoying! To see how servers work from
-          within, we will build a simple web server by ourselves. We will use Node.js as
-          a server part technology for that task. Then we'll use Heroku cloud application
-          platform to turn this local server into a world wide server.
-        <div .post-bottom-link>
-          <a href="#">
-            Read more
+<div .row>
+  <img .logo src="/static/images/haskellbr-logo.png">
 
-    <div .col-md-4.haskellbr-sidebar-col>
-      <div .haskellbr-sidebar>
-        <div .haskellbr-sidebar-section>
-          <h2>Anúncios
-          <div .announcement-container>
-            <div .announcement-title>
-              Node.js For Beginners. Deploy Your Blog to Heroku
-          <div .announcement-container>
-            <div .announcement-title>
-              Node.js For Beginners. Deploy Your Blog to Heroku
-          <div .announcement-container>
-            <div .announcement-title>
-              Node.js For Beginners. Deploy Your Blog to Heroku
-          <div .announcement-container>
-            <div .announcement-title>
-              Node.js For Beginners. Deploy Your Blog to Heroku
-          <div .announcement-container>
-            <div .announcement-title>
-              Node.js For Beginners. Deploy Your Blog to Heroku
-        <div .haskellbr-sidebar-section>
-          <h2>Entre em contato
-          <div .input-group>
-            <input class="form-control" placeholder="fulano@email.com" type="email" />
-            <span class="input-group-btn">
-              <button class="btn btn-default">Assinar lista de e-mails
-          <br />
-          <div .social-links>
-            <i class="fa fa-facebook-official"></i>
-            <i class="fa fa-google-plus-square"></i>
-            <i class="fa fa-twitter-square"></i>
+<div .row.homepage-links>
+  <a class="btn btn-primary" href="https://mail.haskell.org/mailman/listinfo/haskell-br">
+    Lista de e-mails
+  <a class="btn btn-primary" href="http://irc.lc/freenode/haskell-br">
+    Canal IRC no freenode
+  <a class="btn btn-primary disabled" href="#">
+    Slack (em breve)

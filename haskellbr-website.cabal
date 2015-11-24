@@ -82,6 +82,7 @@ library
                  , containers
                  , vector
                  , time
+                 , foreign-store
 
 executable         haskellbr-website
     if flag(library-only)

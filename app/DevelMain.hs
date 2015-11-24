@@ -30,16 +30,17 @@
 
 module DevelMain where
 
-import Prelude
-import Application (getApplicationRepl, shutdownApp)
+import           Application              (getApplicationRepl, shutdownApp)
+import           Prelude
 
-import Control.Exception (finally)
-import Control.Monad ((>=>))
-import Control.Concurrent
-import Data.IORef
-import Foreign.Store
-import Network.Wai.Handler.Warp
-import GHC.Word
+import           Control.Concurrent
+import           Control.Exception        (finally)
+import           Control.Monad            ((>=>))
+import           Data.IORef
+import           Data.Time.Clock
+import           Foreign.Store
+import           GHC.Word
+import           Network.Wai.Handler.Warp
 
 -- | Start or restart the server.
 -- newStore is from foreign-store.
@@ -73,11 +74,14 @@ update = do
           -> IO ThreadId
     start done = do
         (port, site, app) <- getApplicationRepl
-        forkIO (finally (runSettings (setPort port defaultSettings) app)
+        tid <- forkIO (finally (runSettings (setPort port defaultSettings) app)
                         -- Note that this implies concurrency
                         -- between shutdownApp and the next app that is starting.
                         -- Normally this should be fine
                         (putMVar done () >> shutdownApp site))
+        writeFile "devel-main-since" =<< show <$> getCurrentTime
+        return tid
+
 
 -- | kill the server
 shutdown :: IO ()

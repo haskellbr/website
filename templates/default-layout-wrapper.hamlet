@@ -15,6 +15,7 @@ $newline never
     <meta name="viewport" content="width=device-width,initial-scale=1">
 
     ^{pageHead pc}
+      <link href='https://fonts.googleapis.com/css?family=Ubuntu:400,300,700|Ubuntu+Mono:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" />
 
     \<!--[if lt IE 9]>
@@ -24,14 +25,6 @@ $newline never
     <script>
       document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/,'js');
   <body>
-    <nav .navbar.navbar-default.navbar-haskellbr.navbar-static-top>
-      <div .container-fluid>
-        <div .navbar-header>
-          <a href="#" .navbar-brand.logo>haskell<span class="logo-green">br</span>
-        <ul class="navbar-nav nav navbar-right">
-          <li>
-            <a href=@{AuthR LoginR}>Login
-
     <div id="main" role="main">
       ^{pageBody pc}
 
