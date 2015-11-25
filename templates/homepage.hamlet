@@ -6,5 +6,5 @@
     Lista de e-mails
   <a class="btn btn-primary" href="http://irc.lc/freenode/haskell-br">
     Canal IRC no freenode
-  <a class="btn btn-primary disabled" href="#">
-    Slack (em breve)
+  <a class="btn btn-primary" href="http://haskellbr.com/slack/">
+    Slack
