@@ -25,4 +25,4 @@ database:
   database: "_env:PGDATABASE:haskellbr-website"
   poolsize: "_env:PGPOOLSIZE:10"
 
-#analytics: UA-YOURCODE
+analytics: UA-70661764-1
