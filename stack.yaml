@@ -1,8 +1,9 @@
+resolver: lts-3.15
+packages:
+- '.'
+extra-deps: []
 flags:
   haskellbr-website:
     library-only: false
     dev: false
-packages:
-- '.'
-extra-deps: []
-resolver: lts-3.10
+extra-package-dbs: []

@@ -17,3 +17,4 @@ cabal.sandbox.config
 *.swp
 *.keter
 devel-main-since
+haskellbr-website.tar.gz
