@@ -7,3 +7,7 @@ production:
 clean:
 	rm **/*.o
 	rm **/*.hi
+
+deploy: production
+	scp haskellbr-website.tar.gz root@box:/home/haskellbr/website/
+	ssh root@box -- "cd /home/haskellbr/website && tar xzfv haskellbr-website.tar.gz && service haskellbr-website restart"
