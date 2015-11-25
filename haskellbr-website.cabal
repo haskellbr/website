@@ -1,133 +1,113 @@
-name:              haskellbr-website
-version:           0.0.0
-cabal-version:     >= 1.8
-build-type:        Simple
+name: haskellbr-website
+version: 0.0.0
+cabal-version: >=1.8
+build-type: Simple
+license: MIT
 
-Flag dev
-    Description:   Turn on development settings, like auto-reload templates.
-    Default:       False
+flag dev
+    description:
+        Turn on development settings, like auto-reload templates.
+    default: False
 
-Flag library-only
-    Description:   Build for use with "yesod devel"
-    Default:       False
+flag library-only
+    description:
+        Build for use with "yesod devel"
+    default: False
 
 library
-    hs-source-dirs: ., app
-    exposed-modules: Application
-                     Foundation
-                     Import
-                     Import.NoFoundation
-                     Model
-                     Settings
-                     Settings.StaticFiles
-                     Handler.Common
-                     Handler.Home
-
-    if flag(dev) || flag(library-only)
-        cpp-options:   -DDEVELOPMENT
-        ghc-options:   -Wall -fwarn-tabs -O0
+    
+    if (flag(dev) || flag(library-only))
+        cpp-options: -DDEVELOPMENT
+        ghc-options: -Wall -fwarn-tabs -O0
     else
-        ghc-options:   -Wall -fwarn-tabs -O2
+        ghc-options: -Wall -fwarn-tabs -O2
+    exposed-modules:
+        Application
+        Foundation
+        Import
+        Import.NoFoundation
+        Model
+        Settings
+        Settings.StaticFiles
+        Handler.Common
+        Handler.Home
+    build-depends:
+        base >=4 && <5,
+        yesod >=1.4.1 && <1.5,
+        yesod-core >=1.4.6 && <1.5,
+        yesod-auth >=1.4.0 && <1.5,
+        yesod-static >=1.4.0.3 && <1.6,
+        yesod-form >=1.4.0 && <1.5,
+        classy-prelude >=0.10.2,
+        classy-prelude-conduit >=0.10.2,
+        classy-prelude-yesod >=0.10.2,
+        bytestring >=0.9 && <0.11,
+        text >=0.11 && <2.0,
+        persistent >=2.0 && <2.3,
+        persistent-postgresql >=2.1.1 && <2.3,
+        persistent-template >=2.0 && <2.3,
+        template-haskell -any,
+        shakespeare >=2.0 && <2.1,
+        hjsmin >=0.1 && <0.2,
+        monad-control >=0.3 && <1.1,
+        wai-extra >=3.0 && <3.1,
+        yaml >=0.8 && <0.9,
+        http-conduit >=2.1 && <2.2,
+        directory >=1.1 && <1.3,
+        warp >=3.0 && <3.2,
+        data-default -any,
+        aeson >=0.6 && <0.10,
+        conduit >=1.0 && <2.0,
+        monad-logger >=0.3 && <0.4,
+        fast-logger >=2.2 && <2.5,
+        wai-logger >=2.2 && <2.3,
+        file-embed -any,
+        safe -any,
+        unordered-containers -any,
+        containers -any,
+        vector -any,
+        time -any,
+        foreign-store -any
+    extensions: TemplateHaskell QuasiQuotes OverloadedStrings
+                NoImplicitPrelude CPP MultiParamTypeClasses TypeFamilies GADTs
+                GeneralizedNewtypeDeriving FlexibleContexts FlexibleInstances
+                EmptyDataDecls NoMonomorphismRestriction DeriveDataTypeable
+                ViewPatterns TupleSections RecordWildCards
+    hs-source-dirs: . app
 
-    extensions: TemplateHaskell
-                QuasiQuotes
-                OverloadedStrings
-                NoImplicitPrelude
-                CPP
-                MultiParamTypeClasses
-                TypeFamilies
-                GADTs
-                GeneralizedNewtypeDeriving
-                FlexibleContexts
-                FlexibleInstances
-                EmptyDataDecls
-                NoMonomorphismRestriction
-                DeriveDataTypeable
-                ViewPatterns
-                TupleSections
-                RecordWildCards
-
-    build-depends: base                          >= 4          && < 5
-                 , yesod                         >= 1.4.1      && < 1.5
-                 , yesod-core                    >= 1.4.6      && < 1.5
-                 , yesod-auth                    >= 1.4.0      && < 1.5
-                 , yesod-static                  >= 1.4.0.3    && < 1.6
-                 , yesod-form                    >= 1.4.0      && < 1.5
-                 , classy-prelude                >= 0.10.2
-                 , classy-prelude-conduit        >= 0.10.2
-                 , classy-prelude-yesod          >= 0.10.2
-                 , bytestring                    >= 0.9        && < 0.11
-                 , text                          >= 0.11       && < 2.0
-                 , persistent                    >= 2.0        && < 2.3
-                 , persistent-postgresql         >= 2.1.1      && < 2.3
-                 , persistent-template           >= 2.0        && < 2.3
-                 , template-haskell
-                 , shakespeare                   >= 2.0        && < 2.1
-                 , hjsmin                        >= 0.1        && < 0.2
-                 , monad-control                 >= 0.3        && < 1.1
-                 , wai-extra                     >= 3.0        && < 3.1
-                 , yaml                          >= 0.8        && < 0.9
-                 , http-conduit                  >= 2.1        && < 2.2
-                 , directory                     >= 1.1        && < 1.3
-                 , warp                          >= 3.0        && < 3.2
-                 , data-default
-                 , aeson                         >= 0.6        && < 0.10
-                 , conduit                       >= 1.0        && < 2.0
-                 , monad-logger                  >= 0.3        && < 0.4
-                 , fast-logger                   >= 2.2        && < 2.5
-                 , wai-logger                    >= 2.2        && < 2.3
-                 , file-embed
-                 , safe
-                 , unordered-containers
-                 , containers
-                 , vector
-                 , time
-                 , foreign-store
-
-executable         haskellbr-website
+executable haskellbr-website
+    
     if flag(library-only)
-        Buildable: False
-
-    main-is:           main.hs
-    hs-source-dirs:    app
-    build-depends:     base, haskellbr-website
-
-    ghc-options:       -threaded -O2 -rtsopts -with-rtsopts=-N
+        buildable: False
+    main-is: main.hs
+    build-depends:
+        base -any,
+        haskellbr-website -any
+    hs-source-dirs: app
+    ghc-options: -threaded -O2 -rtsopts -with-rtsopts=-N
 
 test-suite test
-    type:              exitcode-stdio-1.0
-    main-is:           Spec.hs
-    hs-source-dirs:    test
-    ghc-options:       -Wall
-
-    extensions: TemplateHaskell
-                QuasiQuotes
-                OverloadedStrings
-                NoImplicitPrelude
-                CPP
-                MultiParamTypeClasses
-                TypeFamilies
-                GADTs
-                GeneralizedNewtypeDeriving
-                FlexibleContexts
-                FlexibleInstances
-                EmptyDataDecls
-                NoMonomorphismRestriction
-                DeriveDataTypeable
-                ViewPatterns
-                TupleSections
-
-    build-depends: base
-                 , haskellbr-website
-                 , yesod-test >= 1.4.3 && < 1.5
-                 , yesod-core
-                 , yesod
-                 , persistent
-                 , persistent-postgresql
-                 , resourcet
-                 , monad-logger
-                 , shakespeare
-                 , transformers
-                 , hspec >= 2.0.0
-                 , classy-prelude
-                 , classy-prelude-yesod
+    type: exitcode-stdio-1.0
+    main-is: Spec.hs
+    build-depends:
+        base -any,
+        haskellbr-website -any,
+        yesod-test >=1.4.3 && <1.5,
+        yesod-core -any,
+        yesod -any,
+        persistent -any,
+        persistent-postgresql -any,
+        resourcet -any,
+        monad-logger -any,
+        shakespeare -any,
+        transformers -any,
+        hspec >=2.0.0,
+        classy-prelude -any,
+        classy-prelude-yesod -any
+    extensions: TemplateHaskell QuasiQuotes OverloadedStrings
+                NoImplicitPrelude CPP MultiParamTypeClasses TypeFamilies GADTs
+                GeneralizedNewtypeDeriving FlexibleContexts FlexibleInstances
+                EmptyDataDecls NoMonomorphismRestriction DeriveDataTypeable
+                ViewPatterns TupleSections
+    hs-source-dirs: test
+    ghc-options: -Wall
