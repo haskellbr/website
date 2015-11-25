@@ -5,8 +5,7 @@ production:
 	tar -czvf haskellbr-website.tar.gz config/keter.yml static dist/bin/haskellbr-website
 
 clean:
-	rm **/*.o
-	rm **/*.hi
+	rm {**/,}*.{o,hi} || echo ">>> No files to remove"
 
 deploy: production
 	scp haskellbr-website.tar.gz root@box:/home/haskellbr/website/
