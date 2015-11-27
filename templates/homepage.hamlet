@@ -1,12 +1,34 @@
-<div>
+<div .homepage-header .dark-bg>
   <img .logo src="/static/images/haskellbr-logo.png">
+  <div .homepage-links>
+    <a class="btn btn-primary" href="https://mail.haskell.org/mailman/listinfo/haskell-br">
+      Lista de e-mails
+    <a class="btn btn-primary" href="http://irc.lc/freenode/haskell-br">
+      Canal IRC no freenode
+    <a class="btn btn-primary" href="http://haskellbr.com/slack/">
+      Slack
+    <a class="btn btn-primary" href="https://plus.google.com/communities/114632834967823295855">
+      Comunidade no Google+
 
-<div .homepage-links>
-  <a class="btn btn-primary" href="https://mail.haskell.org/mailman/listinfo/haskell-br">
-    Lista de e-mails
-  <a class="btn btn-primary" href="http://irc.lc/freenode/haskell-br">
-    Canal IRC no freenode
-  <a class="btn btn-primary" href="http://haskellbr.com/slack/">
-    Slack
-  <a class="btn btn-primary" href="https://plus.google.com/communities/114632834967823295855">
-    Comunidade no Google+
+<div .homepage-events .center-block>
+  <h2>Proximos eventos
+  <p>
+    Os meetups da HaskellBR em São Paulo estão sendo organizados pelo Garoa
+    Hacker Clube. Wiki oficial em: <a href="https://garoa.net.br/wiki/Haskell_Meetup">https://garoa.net.br/wiki/Haskell_Meetup</a>.
+  <br />
+  <ul class="center-block events">
+    <li class="event">
+      <b>Evento no Google Plus:
+      <a href="https://plus.google.com/events/cojvbaipbp62v10fhh4q8ki1apc">
+        <span class="event-name">
+          7º Encontro de Haskellers de São Paulo
+        <span class="event-date">
+          (25/01/2016)
+      <br />
+      <b>Local:
+      <span class="event-location">
+        <a href="https://goo.gl/maps/s6WrbWADUyo">
+          Garoa Hacker Clube (Rua Costa Carvalho, 567 - Pinheiros. CEP 05429-130)
+
+<div .homepage-footer .dark-bg>
+  <a href="https://github.com/haskellbr/haskellbr-website">Source Code
