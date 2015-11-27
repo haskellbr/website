@@ -8,5 +8,5 @@ clean:
 	rm {**/,}*.{o,hi} || echo ">>> No files to remove"
 
 deploy: production
-	scp haskellbr-website.tar.gz root@box:/home/haskellbr/website/
-	ssh root@box -- "cd /home/haskellbr/website && tar xzfv haskellbr-website.tar.gz && service haskellbr-website restart"
+	scp haskellbr-website.tar.gz haskellbr@box:/home/haskellbr/website/
+	ssh haskellbr@box -- "cd /home/haskellbr/website && tar xzfv haskellbr-website.tar.gz && service haskellbr-website restart"
