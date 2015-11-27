@@ -39,9 +39,37 @@ html, body {
   text-align: left;
 }
 
+.homepage-events .events {
+  padding: 0;
+  list-style: none;
+  border: 1px solid #ccc;
+  text-align: center;
+}
+
+.homepage-events .events .event {
+  display: block;
+  padding: 15px;
+  text-align: left;
+  line-height: 1.8;
+}
+
 .homepage-events h2 {
   text-align: center;
 }
+
+.event .event-date {
+  color: gray;
+}
+
+.event .event-name {
+  padding: 0;
+  margin: 10px 0 5px 0;
+}
+
+.homepage-events .event-date {
+  font-size: 15px;
+}
+
 
 .homepage-footer {
   border-top: solid white 1px;

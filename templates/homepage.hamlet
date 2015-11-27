@@ -11,21 +11,21 @@
       Comunidade no Google+
 
 <div .homepage-events .center-block>
-  <h2>Proximos eventos
+  <h2>Próximos eventos
   <p>
     Os meetups da HaskellBR em São Paulo estão sendo organizados pelo Garoa
     Hacker Clube. Wiki oficial em: <a href="https://garoa.net.br/wiki/Haskell_Meetup">https://garoa.net.br/wiki/Haskell_Meetup</a>.
   <br />
   <ul class="center-block events">
     <li class="event">
-      <b>Evento no Google Plus:
-      <a href="https://plus.google.com/events/cojvbaipbp62v10fhh4q8ki1apc">
-        <span class="event-name">
-          7º Encontro de Haskellers de São Paulo
-        <span class="event-date">
-          (25/01/2016)
+      <span class="event-date">25/01/2016
       <br />
-      <b>Local:
+      <a href="https://plus.google.com/events/cojvbaipbp62v10fhh4q8ki1apc">
+        <h3 class="event-name">
+          7º Encontro de Haskellers de São Paulo
+      <a href="https://plus.google.com/events/cojvbaipbp62v10fhh4q8ki1apc">
+        Google plus
+      <br />
       <span class="event-location">
         <a href="https://goo.gl/maps/s6WrbWADUyo">
           Garoa Hacker Clube (Rua Costa Carvalho, 567 - Pinheiros. CEP 05429-130)
