@@ -14,9 +14,9 @@ Initially this was deployed on a Machine running Ubuntu by running
 - - -
 
 The on-going deployment story intends to:
-* Build a **dinamically-linked** binary on a docker container
+* Build a ~~dinamically-linked~~ binary on a docker container
 * Compress the binary
-* Use `dockerize` or the `haskell-scratch` image to build a minimal docker image
+* ~~Use `dockerize` or the `haskell-scratch` image to build a minimal docker image~~
 * Deploy that anywhere
 
 ## License

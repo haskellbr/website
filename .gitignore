@@ -18,3 +18,5 @@ cabal.sandbox.config
 *.keter
 devel-main-since
 haskellbr-website.tar.gz
+docker-assets/static
+docker-assets/config
