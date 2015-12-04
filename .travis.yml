@@ -1,1 +1,8 @@
 language: haskell
+services:
+  - docker
+
+script:
+  - stack build
+  - stack test
+  - make docker
