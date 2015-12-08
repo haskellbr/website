@@ -1,6 +1,8 @@
 <div .homepage-header .dark-bg>
   <img .logo src="/static/images/haskellbr-logo.png">
   <div .homepage-links>
+    <a class="btn btn-primary" href="http://blog.haskellbr.com/">
+      Blog
     <a class="btn btn-primary" href="https://mail.haskell.org/mailman/listinfo/haskell-br">
       Lista de e-mails
     <a class="btn btn-primary" href="http://irc.lc/freenode/haskell-br">
