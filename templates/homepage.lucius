@@ -1,5 +1,5 @@
 html, body {
-  font-family: 'Ubuntu';
+  font-family: 'Ubuntu', sans-serif;
   height: 100%;
   text-align: center;
 }
