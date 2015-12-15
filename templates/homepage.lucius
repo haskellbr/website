@@ -18,6 +18,18 @@ html, body {
   max-width: 400px;
 }
 
+@media screen and (max-width: 400px) {
+  .logo {
+    max-width: 200px;
+  }
+}
+
+@media screen and (max-width: 200px) {
+  .logo {
+    max-width: 150px;
+  }
+}
+
 .homepage-links {
   padding-bottom: 100px;
   padding-left: 30px;
