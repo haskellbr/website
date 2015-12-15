@@ -25,6 +25,8 @@ before_install:
 script:
 - createdb "haskellbr-website"
 - createuser "haskellbr-website"
+- createdb "haskellbr-website_test"
+- createuser "haskellbr-website_test"
 - stack --no-terminal --install-ghc test
 
 # Caching so the next build will be fast too.
