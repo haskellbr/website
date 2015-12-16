@@ -18,6 +18,9 @@ before_install:
 
 script:
 - stack --no-terminal --install-ghc test
+- stack exec haskellbr-website
+- mkdir -p to-s3
+- cp -r index.html static to-s3/
 
 # Caching so the next build will be fast too.
 cache:
