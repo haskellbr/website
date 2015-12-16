@@ -1,0 +1,111 @@
+html, body {
+  font-family: 'Ubuntu', sans-serif;
+  height: 100%;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+.dark-bg {
+  background: #211629;
+  background: -moz-linear-gradient(left bottom, #211629 0%, #24192e 100%);
+  background: -webkit-linear-gradient(left bottom,  #211629 0%, #24192e 100%);
+  background: linear-gradient(to top right, #211629 0%, #24192e 100%);
+  color: white;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#211629', endColorstr='#24192e', GradientType=1);
+}
+
+.logo {
+  margin: 80px auto 20px auto;
+  max-width: 400px;
+}
+
+@media screen and (max-width: 400px) {
+  .logo {
+    max-width: 200px;
+  }
+}
+
+@media screen and (max-width: 200px) {
+  .logo {
+    max-width: 150px;
+  }
+}
+
+.homepage-links {
+  padding-bottom: 100px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.homepage-links ul {
+  list-style: none;
+}
+
+.homepage-links li {
+  display: inline-block;
+}
+
+.homepage-links .btn {
+  background-color: transparent;
+  border-color: white;
+  border-radius: 0;
+  margin: 5px;
+}
+
+.homepage-events {
+  margin-bottom: 60px;
+  max-width: 600px;
+  padding-left: 30px;
+  padding-right: 30px;
+  text-align: left;
+}
+
+.homepage-events .events {
+  padding: 0;
+  list-style: none;
+  border: 1px solid #ccc;
+  text-align: center;
+}
+
+.homepage-events .events .event {
+  display: block;
+  padding: 15px;
+  text-align: left;
+  line-height: 1.8;
+}
+
+.homepage-events h2 {
+  text-align: center;
+}
+
+.event .event-date {
+  color: gray;
+}
+
+.event .event-name {
+  padding: 0;
+  margin: 10px 0 5px 0;
+}
+
+.homepage-events .event-date {
+  font-size: 15px;
+}
+
+
+.homepage-footer {
+  border-top: solid white 1px;
+  bottom: 0;
+  font-size: 10px;
+  height: 40px;
+  padding-bottom: 10px;
+  padding-top: 13px;
+  position: fixed;
+  width: 100%;
+}
+
+.homepage-footer a,
+.homepage-footer a:visited,
+.homepage-footer a:hover {
+  color: white;
+}

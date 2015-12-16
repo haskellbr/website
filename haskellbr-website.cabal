@@ -1,0 +1,66 @@
+
+name: haskellbr-website
+version: 0.0.0
+cabal-version: >=1.10
+build-type: Simple
+license: MIT
+license-file: LICENSE.md
+copyright: 2015 Pedro Tacla Yamada <tacla.yamada@gmail.com>
+maintainer: Pedro Tacla Yamada <tacla.yamada@gmail.com>
+synopsis: TODO
+description:
+    TODO
+category: TODO
+author: Pedro Tacla Yamada <tacla.yamada@gmail.com>
+tested-with: GHC ==7.8 GHC ==7.6
+extra-source-files:
+    CHANGELOG.md
+    README.md
+
+library
+    exposed-modules:
+        Haskellbr.Website
+    build-depends: Spock -any
+                 , base ==4.*
+                 , bytestring
+                 , lucid -any
+                 , transformers >= 0.4.2.0
+                 , wai-middleware-static
+    default-language: Haskell2010
+    hs-source-dirs: lib
+    ghc-prof-options: -auto-all -prof
+    ghc-options: -Wall
+
+executable haskellbr-website
+    main-is: Main.hs
+    build-depends: Spock -any
+                 , base -any
+                 , bytestring
+                 , haskellbr-website -any
+                 , lucid -any
+                 , transformers >= 0.4.2.0
+                 , wai-middleware-static
+    default-language: Haskell2010
+    hs-source-dirs: bin
+    ghc-prof-options: -auto-all -prof
+    ghc-options: -Wall
+
+test-suite hspec
+    type: exitcode-stdio-1.0
+    main-is: Spec.hs
+    build-depends: HUnit -any
+                 , QuickCheck -any
+                 , Spock -any
+                 , base -any
+                 , bytestring
+                 , haskellbr-website -any
+                 , hspec ==2.*
+                 , lucid -any
+                 , transformers >= 0.4.2.0
+                 , wai-middleware-static
+    default-language: Haskell2010
+    hs-source-dirs: lib test
+    other-modules:
+        Haskellbr.Website
+        Haskellbr.WebsiteSpec
+    ghc-options: -Wall -Werror
