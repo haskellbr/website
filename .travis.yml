@@ -33,7 +33,8 @@ deploy:
   access_key_id: AKIAJP7VW4B2IVAP5X4Q
   secret_access_key:
     secure: "jOD+lQVPCaIcttU8ADnHiQ7fBIWDYjFmoHNtqFNA7c0khHGw84b6NCUPB+4ZpWv/9UOXLdYvTj3W1Ja2safdSuBFOeREQ9T6F7uaUYDPhAMgd/MMNtZMKg9MTarmiT4ZcgRR0alq8WqZGQM7C18kQH92g81pHFC2AOlhWzn5aA1G4OVpwaDN7CGbpKiJD8SBTAY0UJWTncA6lYHOrTfd27LwsUZdBDmWw/xzc8xyLo1us0nb6akDhnw+5YLjkoZgEdYeVdwqqlhoHbWS+1Gk8zMVuxT1lf2se+SGZFBxJd2RrplW3BAxEagqB12/K796VRQigu4A2MN5k5UkxoMjRVHuiYKJEmRKMfxM19IR5CMLJY1zJXQoVcJq9/rwW6+0rgg23l7pufksc+yP5tae36SXLPEKIF2hgqYfbj1Kd7gVK+83DqmS7ehsclus67Q5oht44dDdJCvGbZY196oqqES5yZUmKY/q7OwudthFQ86fwwtiPnLcffOhetHiomQbuZY9AOu0blXWM+l/TVfjZhnlws10S8ezcZOcdhEO/XsKJUDSm49P99gkq1Di79RkEJyfkO31rsxvoOR7UR52dNwUyiP6VaqcIU1BkZjt//V9v22b1zS5cppKrd1hyATtxbgi2mU68eyiLn4yxnSd1j8BNgjRp3aDDSfZCAfClX4="
-  bucket: s3://haskellbr.com/
+  bucket: haskellbr.com
+  region: sa-east-1
   acl: public_read
   skip_cleanup: true
   local_dir: to-s3
