@@ -115,4 +115,7 @@ wrapper content = doctypehtml_ $ do
               , rel_ "stylesheet"
               , type_ "text/css"
               ]
+        link_ [ href_ "/static/images/favicon.ico"
+              , rel_ "shortcut icon"
+              ]
     body_ content
