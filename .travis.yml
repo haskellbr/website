@@ -40,4 +40,4 @@ deploy:
   local_dir: to-s3
   on:
     repo: haskellbr/website
-    branch: dev
+    branch: master
