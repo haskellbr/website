@@ -73,9 +73,10 @@ homepage = wrapper $ do
                 br_ []
                 a_ [ href_ "https://plus.google.com/events/cojvbaipbp62v10fhh4q8ki1apc" ] $
                     h3_ [ class_ "event-name" ] "7º Encontro de Haskellers de São Paulo"
-                a_ [ href_ "http://www.meetup.com/haskellbr-sp/events/227526368/" ] $
+                a_ [ href_ "http://www.meetup.com/haskellbr-sp/events/227526368/" ]
                     "Evento no Meetup"
-                a_ [ href_ "https://plus.google.com/events/cojvbaipbp62v10fhh4q8ki1apc" ] $
+                br_ []
+                a_ [ href_ "https://plus.google.com/events/cojvbaipbp62v10fhh4q8ki1apc" ]
                     "Google plus"
                 br_ []
                 span_ [ class_ "event-location" ] $
