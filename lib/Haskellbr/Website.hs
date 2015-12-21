@@ -40,14 +40,17 @@ main = getArgs >>= \case
 
 homepage :: HtmlT Identity ()
 homepage = wrapper $ do
-    _ <- div_ [ class_ "dark-bg homepage-header" ] $ do
-        img_ [ class_ "logo" , src_ "/static/images/haskellbr-logo.png" ]
+    _ <- div_ [ class_ "homepage-header" ] $ do
+        img_ [ class_ "logo" , src_ "/static/images/haskellbr-logo.jpg" ]
         ul_ [ class_ "homepage-links" ] $ do
             let links = [ ("Blog", "http://blog.haskellbr.com/")
+                        , ("GitHub", "https://github.com/haskellbr")
+                        , ("Twitter", "https://twitter.com/haskellbr2")
                         , ("Lista de e-mails", "https://mail.haskell.org/mailman/listinfo/haskell-br")
                         , ("Canal #haskell-br no freenode", "http://irc.lc/freenode/haskell-br")
                         , ("Slack", "http://haskellbr.com/slack/")
-                        , ("Comunidade no Google+", "https://plus.google.com/communities/114632834967823295855")
+                        , ("Google+", "https://plus.google.com/communities/114632834967823295855")
+                        , ("HaskellBR-SP no Meetup", "http://www.meetup.com/haskellbr-sp/")
                         ]
             forM links $ \(name, href) ->
                 li_ [] $ a_ [ class_ "btn btn-primary"
@@ -70,16 +73,14 @@ homepage = wrapper $ do
                 br_ []
                 a_ [ href_ "https://plus.google.com/events/cojvbaipbp62v10fhh4q8ki1apc" ] $
                     h3_ [ class_ "event-name" ] "7º Encontro de Haskellers de São Paulo"
+                a_ [ href_ "http://www.meetup.com/haskellbr-sp/events/227526368/" ] $
+                    "Evento no Meetup"
                 a_ [ href_ "https://plus.google.com/events/cojvbaipbp62v10fhh4q8ki1apc" ] $
                     "Google plus"
                 br_ []
                 span_ [ class_ "event-location" ] $
                     a_ [ href_ "https://goo.gl/maps/s6WrbWADUyo" ]
                         "Garoa Hacker Clube (Rua Costa Carvalho, 567 - Pinheiros. CEP 05429-130)"
-
-    div_ [ class_ "homepage-footer dark-bg" ] $
-        a_ [ href_ "https://github.com/haskellbr/website" ] "Source Code"
-
 
 wrapper :: Monad m => HtmlT m a -> HtmlT m a
 wrapper content = doctypehtml_ $ do

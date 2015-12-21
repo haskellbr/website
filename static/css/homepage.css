@@ -1,9 +1,12 @@
 html, body {
-  font-family: 'Ubuntu', sans-serif;
   height: 100%;
   text-align: center;
   margin: 0;
   padding: 0;
+}
+
+html, body, h1, h2, h3, h4, p, div {
+  font-family: 'Ubuntu', sans-serif;
 }
 
 .dark-bg {
@@ -11,8 +14,12 @@ html, body {
   background: -moz-linear-gradient(left bottom, #211629 0%, #24192e 100%);
   background: -webkit-linear-gradient(left bottom,  #211629 0%, #24192e 100%);
   background: linear-gradient(to top right, #211629 0%, #24192e 100%);
-  color: white;
+  /* color: white; */
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#211629', endColorstr='#24192e', GradientType=1);
+}
+
+.homepage-header {
+  border-bottom: solid 1px #ccc;
 }
 
 .logo {
@@ -22,7 +29,7 @@ html, body {
 
 @media screen and (max-width: 400px) {
   .logo {
-    max-width: 200px;
+    max-width: 300px;
   }
 }
 
@@ -47,8 +54,15 @@ html, body {
 }
 
 .homepage-links .btn {
-  background-color: transparent;
-  border-color: white;
+  background-color: #3db2c7;
+  border-color: #3db2c7;
+  border-radius: 0;
+  margin: 5px;
+}
+
+.homepage-links .btn:hover {
+  background-color: #2F8D9E;
+  border-color: #2F8D9E;
   border-radius: 0;
   margin: 5px;
 }
@@ -107,5 +121,5 @@ html, body {
 .homepage-footer a,
 .homepage-footer a:visited,
 .homepage-footer a:hover {
-  color: white;
+  /* color: white; */
 }
