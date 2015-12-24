@@ -91,7 +91,8 @@ wrapper content = doctypehtml_ $ do
         meta_ [ charset_ "UTF-8" ]
         meta_ [ name_ "author", content_ "Pedro Tacla Yamada" ]
         meta_ [ name_ "description"
-              , content_ ( "A HaskellBR é uma comunidade formada com o "
+              , content_ ( "Site oficial da comunidade de Haskell no brazil. "
+                        <> "A HaskellBR é uma comunidade formada com o "
                         <> "intuito de aprender mais sobre a linguagem "
                         <> "de programação Haskell e seu ecossistema, "
                         <> "bem como produzir conteúdo e contribuições "
