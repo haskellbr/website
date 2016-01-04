@@ -48,7 +48,7 @@ homepage = wrapper $ do
                         , ("Twitter", "https://twitter.com/haskellbr2")
                         , ("Lista de e-mails", "https://mail.haskell.org/mailman/listinfo/haskell-br")
                         , ("Canal #haskell-br no freenode", "http://irc.lc/freenode/haskell-br")
-                        , ("Slack", "http://haskellbr.com/slack/")
+                        , ("Slack", "http://slack.haskellbr.com")
                         , ("Google+", "https://plus.google.com/communities/114632834967823295855")
                         , ("HaskellBR-SP no Meetup", "http://www.meetup.com/haskellbr-sp/")
                         ]
