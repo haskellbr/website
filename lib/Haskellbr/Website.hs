@@ -58,7 +58,7 @@ homepage = wrapper $ do
                             ] name
 
     div_ [ class_ "homepage-events center-block" ] $ do
-        h2_ "Próximos eventos"
+        h2_ "Últimos eventos"
         p_ [] $ do
             "Os meetups da HaskellBR em São Paulo estão sendo organizados pelo Garoa"
             "Hacker Clube. Wiki oficial em: "
