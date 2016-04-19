@@ -19,7 +19,7 @@ html, body, h1, h2, h3, h4, p, div {
 }
 
 .homepage-header {
-  border-bottom: solid 1px #ccc;
+  /* border-bottom: solid 1px #ccc; */
 }
 
 .logo {
@@ -39,35 +39,17 @@ html, body, h1, h2, h3, h4, p, div {
   }
 }
 
-.homepage-links {
-  padding-bottom: 30px;
-  padding-left: 30px;
-  padding-right: 30px;
-  max-width: 700px;
-  margin-left: auto;
-  margin-right: auto;
+.homepage-links .container {
+  text-align: center;
 }
 
-.homepage-links ul {
-  list-style: none;
+.homepage-links .container .nav {
+  float: none;
 }
 
-.homepage-links li {
+.homepage-links .container .nav li {
+  float: none;
   display: inline-block;
-}
-
-.homepage-links .btn {
-  background-color: #3db2c7;
-  border-color: #3db2c7;
-  border-radius: 0;
-  margin: 5px;
-}
-
-.homepage-links .btn:hover {
-  background-color: #2F8D9E;
-  border-color: #2F8D9E;
-  border-radius: 0;
-  margin: 5px;
 }
 
 .homepage-events {
@@ -121,8 +103,8 @@ html, body, h1, h2, h3, h4, p, div {
   width: 100%;
 }
 
-.homepage-footer a,
-.homepage-footer a:visited,
-.homepage-footer a:hover {
-  /* color: white; */
-}
+/* .homepage-footer a, */
+/* .homepage-footer a:visited, */
+/* .homepage-footer a:hover { */
+/*   /\* color: white; *\/ */
+/* } */

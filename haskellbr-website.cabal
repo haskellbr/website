@@ -24,7 +24,9 @@ library
                  , base ==4.*
                  , bytestring
                  , lucid -any
+                 , text >= 1.2.1.3
                  , transformers >= 0.4.2.0
+                 , wai >= 3.0.4.0
                  , wai-middleware-static
     default-language: Haskell2010
     hs-source-dirs: lib
@@ -36,10 +38,15 @@ executable haskellbr-website
     build-depends: Spock -any
                  , base -any
                  , bytestring
+                 , foreign-store
                  , haskellbr-website -any
                  , lucid -any
+                 , text >= 1.2.1.3
+                 , time >= 1.5.0.1
                  , transformers >= 0.4.2.0
+                 , wai >= 3.0.4.0
                  , wai-middleware-static
+                 , warp >= 3.1.3.1
     default-language: Haskell2010
     hs-source-dirs: bin
     ghc-prof-options: -auto-all -prof
@@ -56,7 +63,9 @@ test-suite hspec
                  , haskellbr-website -any
                  , hspec ==2.*
                  , lucid -any
+                 , text >= 1.2.1.3
                  , transformers >= 0.4.2.0
+                 , wai >= 3.0.4.0
                  , wai-middleware-static
     default-language: Haskell2010
     hs-source-dirs: lib test
