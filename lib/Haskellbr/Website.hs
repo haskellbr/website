@@ -6,14 +6,12 @@ module Haskellbr.Website
   ( module Haskellbr.Website
   ) where
 
-import           Control.Monad                 (forM, forM_)
+import           Control.Monad                 (forM)
 import           Control.Monad.IO.Class        (MonadIO)
 import qualified Data.ByteString.Lazy          as ByteString
 import           Data.Functor.Identity
 import           Data.Monoid
-import           Data.Text                     (Text)
 import           Lucid
-import           Network.Wai                   (Application)
 import           Network.Wai.Middleware.Static (hasPrefix, staticPolicy)
 import           System.Environment            (getArgs)
 import           Web.Spock
@@ -22,12 +20,6 @@ import           Web.Spock
 -- Renders Lucid and sends it as the response
 renderLucid :: MonadIO m => Html a1 -> ActionT m ()
 renderLucid = lazyBytes . renderBS
-
-app :: IO Application
-app = spockAsApp $ spockT id $ do
-    get "/" $ renderLucid homepage
-    -- Serve files on the static dir
-    middleware (staticPolicy (hasPrefix "static"))
 
 -- |
 -- Main entry-point for the application
@@ -42,81 +34,54 @@ main = getArgs >>= \case
           "Defaulting to generating the index.html file that is the " <>
           "whole HaskellBR homepage"
         ByteString.writeFile "./index.html" (renderBS homepage)
-        putStrLn "Wrote file to ./index.html"
+        putStrLn $ "Wrote file to ./index.html"
 
 -- * Templates
 
 homepage :: HtmlT Identity ()
 homepage = wrapper $ do
-    _ <- nav_ [ class_ "homepage-links navbar navbar-default" ] $
-        div_ [ class_ "container" ] $
-            ul_ [ class_ "nav navbar-nav" ] $ do
-                let links = [ ("Blog", "http://blog.haskellbr.com/")
-                            , ("GitHub", "https://github.com/haskellbr")
-                            , ("Twitter", "https://twitter.com/haskellbr2")
-                            , ("Lista de e-mails", "https://mail.haskell.org/mailman/listinfo/haskell-br")
-                            , ("Canal #haskell-br no freenode", "http://irc.lc/freenode/haskell-br")
-                            , ("Slack", "http://slack.haskellbr.com")
-                            , ("Google+", "https://plus.google.com/communities/114632834967823295855")
-                            , ("HaskellBR-SP no Meetup", "http://www.meetup.com/haskellbr-sp/")
-                            ]
-                forM links $ \(name, href) ->
-                    li_ [] $ a_ [ href_ href
-                                ] name
-
-    _ <- div_ [ class_ "homepage-header" ] $
+    _ <- div_ [ class_ "homepage-header" ] $ do
         img_ [ class_ "logo" , src_ "/static/images/haskellbr-logo.jpg" ]
-
-    div_ [ class_ "homepage-events center-block" ] $ do
-        h2_ $ do
-            "Próximos eventos de FP"
-            br_ []
-            "(não só Haskell)"
-        ul_ [ class_ "center-block events" ] $
-            event EventData { eventDate = "25/01/2016"
-                            , eventTitle = "7º Encontro de Haskellers de São Paulo"
-                            , eventLinks = [ ("Evento no Meetup", "http://www.meetup.com/haskellbr-sp/events/227526368/a")
-                                           , ("Google plus", "https://plus.google.com/events/cojvbaipbp62v10fhh4q8ki1apc")
-                                           ]
-                            , eventLink = "https://plus.google.com/events/cojvbaipbp62v10fhh4q8ki1apc"
-                            , eventLocation = ("Garoa Hacker Clube (Rua Costa Carvalho, 567 - Pinheiros. CEP 05429-130)", "https://goo.gl/maps/s6WrbWADUyo")
-                            }
+        ul_ [ class_ "homepage-links" ] $ do
+            let links = [ ("Blog", "http://blog.haskellbr.com/")
+                        , ("GitHub", "https://github.com/haskellbr")
+                        , ("Twitter", "https://twitter.com/haskellbr2")
+                        , ("Lista de e-mails", "https://mail.haskell.org/mailman/listinfo/haskell-br")
+                        , ("Canal #haskell-br no freenode", "http://irc.lc/freenode/haskell-br")
+                        , ("Slack", "http://slack.haskellbr.com")
+                        , ("Google+", "https://plus.google.com/communities/114632834967823295855")
+                        , ("HaskellBR-SP no Meetup", "http://www.meetup.com/haskellbr-sp/")
+                        ]
+            forM links $ \(name, href) ->
+                li_ [] $ a_ [ class_ "btn btn-primary"
+                            , href_ href
+                            ] name
 
     div_ [ class_ "homepage-events center-block" ] $ do
         h2_ "Últimos eventos"
+        p_ [] $ do
+            "Os meetups da HaskellBR em São Paulo estão sendo organizados pelo Garoa"
+            "Hacker Clube. Wiki oficial em: "
+            a_ [ href_ "https://garoa.net.br/wiki/Haskell_Meetup"
+               ] "https://garoa.net.br/wiki/Haskell_Meetup"
+            "."
         ul_ [ class_ "center-block events" ] $
-            event EventData { eventDate = "25/01/2016"
-                            , eventTitle = "7º Encontro de Haskellers de São Paulo"
-                            , eventLinks = [ ("Evento no Meetup", "http://www.meetup.com/haskellbr-sp/events/227526368/a")
-                                           , ("Google plus", "https://plus.google.com/events/cojvbaipbp62v10fhh4q8ki1apc")
-                                           ]
-                            , eventLink = "https://plus.google.com/events/cojvbaipbp62v10fhh4q8ki1apc"
-                            , eventLocation = ("Garoa Hacker Clube (Rua Costa Carvalho, 567 - Pinheiros. CEP 05429-130)", "https://goo.gl/maps/s6WrbWADUyo")
-                            }
-
-data EventData = EventData { eventTitle    :: Html ()
-                           , eventDate     :: Html ()
-                           , eventLinks    :: [(Html (), Text)]
-                           , eventLink     :: Text
-                           , eventLocation :: (Html (), Text)
-                           }
-
-event :: EventData -> HtmlT Identity ()
-event eventData = li_ [ class_ "event" ] $ do
-    span_ [ class_ "event-date"
-          ]
-        (eventDate eventData)
-    br_ []
-    a_ [ href_ (eventLink eventData) ] $
-        h3_ [ class_ "event-name" ] (eventTitle eventData) -- "7º Encontro de Haskellers de São Paulo"
-    forM_ (eventLinks eventData) $ \(linkName, link) -> do
-        a_ [ href_ link ] linkName
-        br_ []
-    br_ []
-    span_ [ class_ "event-location" ] $ do
-        _ <- a_ [ href_ (snd (eventLocation eventData)) ] -- "https://goo.gl/maps/s6WrbWADUyo" ]
-            (fst (eventLocation eventData)) -- "Garoa Hacker Clube (Rua Costa Carvalho, 567 - Pinheiros. CEP 05429-130)"
-        return ()
+            li_ [ class_ "event" ] $ do
+                span_ [ class_ "event-date"
+                      ]
+                    "25/01/2016"
+                br_ []
+                a_ [ href_ "https://plus.google.com/events/cojvbaipbp62v10fhh4q8ki1apc" ] $
+                    h3_ [ class_ "event-name" ] "7º Encontro de Haskellers de São Paulo"
+                a_ [ href_ "http://www.meetup.com/haskellbr-sp/events/227526368/" ]
+                    "Evento no Meetup"
+                br_ []
+                a_ [ href_ "https://plus.google.com/events/cojvbaipbp62v10fhh4q8ki1apc" ]
+                    "Google plus"
+                br_ []
+                span_ [ class_ "event-location" ] $
+                    a_ [ href_ "https://goo.gl/maps/s6WrbWADUyo" ]
+                        "Garoa Hacker Clube (Rua Costa Carvalho, 567 - Pinheiros. CEP 05429-130)"
 
 wrapper :: Monad m => HtmlT m a -> HtmlT m a
 wrapper content = doctypehtml_ $ do
