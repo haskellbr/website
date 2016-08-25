@@ -67,7 +67,6 @@ homepage = wrapper $ do
                 br_ []
                 a_ [ href_ "http://www.meetup.com/haskellbr-sp/events/233395066/" ] $
                     h3_ [ class_ "event-name" ] "8º Encontro de Haskellers de São Paulo"
-                br_ []
                 span_ [ class_ "event-location" ] $
                     a_ [ href_ "https://maps.google.com/maps?f=q&hl=en&q=Avenida+Presidente+Juscelino+Kubitschek%2C+2041+-+18+andar%2C+S%C3%A3o+Paulo%2C+br" ]
                         "Amazon - Brasil"
