@@ -6,7 +6,7 @@ module Haskellbr.Website
   ( module Haskellbr.Website
   ) where
 
-import           Control.Monad                 (forM)
+import           Control.Monad                 (forM_)
 import           Control.Monad.IO.Class        (MonadIO)
 import qualified Data.ByteString.Lazy          as ByteString
 import           Data.Functor.Identity
@@ -34,13 +34,13 @@ main = getArgs >>= \case
           "Defaulting to generating the index.html file that is the " <>
           "whole HaskellBR homepage"
         ByteString.writeFile "./index.html" (renderBS homepage)
-        putStrLn $ "Wrote file to ./index.html"
+        putStrLn "Wrote file to ./index.html"
 
 -- * Templates
 
 homepage :: HtmlT Identity ()
 homepage = wrapper $ do
-    _ <- div_ [ class_ "homepage-header" ] $ do
+    div_ [ class_ "homepage-header" ] $ do
         img_ [ class_ "logo" , src_ "/static/images/haskellbr-logo.jpg" ]
         ul_ [ class_ "homepage-links" ] $ do
             let links = [ ("Blog", "http://blog.haskellbr.com/")
@@ -52,7 +52,7 @@ homepage = wrapper $ do
                         , ("Google+", "https://plus.google.com/communities/114632834967823295855")
                         , ("HaskellBR-SP no Meetup", "http://www.meetup.com/haskellbr-sp/")
                         ]
-            forM links $ \(name, href) ->
+            forM_ links $ \(name, href) ->
                 li_ [] $ a_ [ class_ "btn btn-primary"
                             , href_ href
                             ] name
