@@ -57,8 +57,22 @@ homepage = wrapper $ do
                             , href_ href
                             ] name
 
+    {-div_ [ class_ "homepage-events center-block" ] $ do-}
+        {-h2_ "Próximos eventos"-}
+        {-ul_ [ class_ "center-block events" ] $-}
+            {-li_ [ class_ "event" ] $ do-}
+                {-span_ [ class_ "event-date"-}
+                      {-]-}
+                    {-"27/09/2016"-}
+                {-br_ []-}
+                {-a_ [ href_ "http://www.meetup.com/haskellbr-sp/events/233395066/" ] $-}
+                    {-h3_ [ class_ "event-name" ] "8º Encontro de Haskellers de São Paulo"-}
+                {-span_ [ class_ "event-location" ] $-}
+                    {-a_ [ href_ "https://maps.google.com/maps?f=q&hl=en&q=Avenida+Presidente+Juscelino+Kubitschek%2C+2041+-+18+andar%2C+S%C3%A3o+Paulo%2C+br" ]-}
+                        {-"Amazon - Brasil"-}
+
     div_ [ class_ "homepage-events center-block" ] $ do
-        h2_ "Próximos eventos"
+        h2_ "Últimos eventos"
         ul_ [ class_ "center-block events" ] $
             li_ [ class_ "event" ] $ do
                 span_ [ class_ "event-date"
@@ -71,9 +85,6 @@ homepage = wrapper $ do
                     a_ [ href_ "https://maps.google.com/maps?f=q&hl=en&q=Avenida+Presidente+Juscelino+Kubitschek%2C+2041+-+18+andar%2C+S%C3%A3o+Paulo%2C+br" ]
                         "Amazon - Brasil"
 
-    div_ [ class_ "homepage-events center-block" ] $ do
-        h2_ "Últimos eventos"
-        ul_ [ class_ "center-block events" ] $
             li_ [ class_ "event" ] $ do
                 span_ [ class_ "event-date"
                       ]
