@@ -73,7 +73,7 @@ homepage = wrapper $ do
 
     div_ [ class_ "homepage-events center-block" ] $ do
         h2_ "Últimos eventos"
-        ul_ [ class_ "center-block events" ] $
+        ul_ [ class_ "center-block events" ] $ do
             li_ [ class_ "event" ] $ do
                 span_ [ class_ "event-date"
                       ]
